@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">E-Garuda | </title>
+    <link rel="stylesheet" href="css/UserDetails.css">
+    <link rel="icon" type="image/x-icon" href="assets/E-garuda-title.png">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script src="js/language.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="color:rgb(0, 88, 0)">Collection Centre at
+        </h1>
+        <h1 id="UserName"></h1>
+    </header>
+
+    <!-- Main content row -->
+    <div class="main-content">
+        <div class="card-container" id="cardContainer">
+            <!-- Cards will be dynamically added here via JS -->
+        </div>
+    </div>
+
+    <!-- Footer row with search and price filter -->
+    <div class="footer">
+
+
+        <div class="left-content">
+            <div id="searchbar">
+                <input type="text" id="searchInput" placeholder="Search by name" />
+                <div id="searchbtn">search</div>
+            </div>
+            <div class="down-container">
+                <div id="price_filter">
+                    <div class="price_filter_container">
+                        <div id="min" class="priceindicator"></div>
+                        <input type="number" class="price min" id="minprice">
+                        <p> to Maximum : ₹</p>
+                        <input type="number" class="price max" id="maxprice">
+                        <div id="max" class="priceindicator"></div>
+                    </div>
+                    <div class="applybtn" id="applybtn">Apply</div>
+                </div>
+                <div class="ImgSearch" id="imgsearch">Search with Image</div>
+            </div>
+        </div>
+        <div id="imageSearchModal" class="modal">
+            <div class="container">
+                <span id="closeModal" style="float: right; font-size: 24px; cursor: pointer;">&times;</span>
+                <h2><i class="fas fa-recycle"></i> E-Waste Prediction</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <label class="file-input-wrapper">
+                        <i class="fas fa-upload"></i>
+                        <input type="file" id="imageInput" accept="image/*" required>
+                    </label>
+                    <button type="submit"><i class="fas fa-cloud-upload-alt"></i> Upload & Predict</button>
+                </form>
+        
+                <h3><i class="fas fa-chart-line"></i> Prediction Result:</h3>
+                <p><i class="fas fa-tag"></i> <strong>Category:</strong> <span id="predictedCategory">-</span></p>
+                <p><i class="fas fa-money-bill-wave"></i> <strong>Estimated Price:</strong> ₹<span id="predictedPrice">-</span></p>
+                <p><i class="fas fa-recycle"></i> <strong>Reuse Probability:</strong> <span id="reuseProbability">-</span>%</p>
+            </div>
+        </div>
+        <div class="right-content">
+            <div id="sells">
+                <div class="button sell" id="sell">Sell</div>
+                <div class="button sell premiumsell" id="cartbtn">Show Cart</div>
+            </div>
+            <div class="button buy">Buy</div>
+        </div>
+
+    </div>
+    <script src="js/UserDetails.js"></script>
+    <script src="js/eWastePrediction.js"></script>
+</body>  
+</html>

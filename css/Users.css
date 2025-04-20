@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 80vh;
+  /* Ensure the body takes full viewport height */
+}
+
+#header-container {
+  height: 10%;
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  justify-content: left;
+  display: flex;
+  padding-left: 1rem;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  /* Stack the rows vertically */
+  height: 100%;
+  /* Fill the entire height of the body */
+}
+
+.row {
+  flex: 0 0 auto;
+  /* Do not grow or shrink */
+}
+
+#center-row {
+  height: 10%;
+  /* Collecting Centre Name row */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#columns-row {
+  height: 110%;
+  /* Two columns row */
+  display: flex;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.column {
+  flex: 1;
+  height: 100%;
+  /* Fill the height of the columns row */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  overflow-x: hidden;
+  /* Hide horizontal scrolling */
+  scrollbar-width: none;
+  /* For Firefox */
+}
+
+.column::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.card:hover {
+  opacity: 0.4;
+  transition-duration: 0.4s;
+}
+
+.img_div {
+  height: 150px;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card_details_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_details {
+  margin-bottom: 0.5rem;
+}
+
+.rightcontent {
+  background-color: white;
+  width: 98%;
+  height: 98%;
+  border-radius: 3rem;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.expandable-div {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgb(0, 131, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transform: scale(1);
+  cursor: pointer;
+  border: 4px solid rgb(165, 255, 165);
+}
+
+.expandable-div:hover {
+  width: 200px;
+  height: 100px;
+  transform: scale(1.1);
+}
+
+.expandable-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.expandable-div:hover .expandable-content {
+  font-weight: bolder;
+  opacity: 1;
+  position: absolute;
+}
+
+.expandable-content p {
+  margin: 0;
+  padding: 0;
+  font-weight: bolder;
+}
+
+.expandable-content .name {
+  font-weight: bolder;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+}
+
+#UserName {
+  flex: 3;
+}
+
+#morebtn {
+  flex: 0.2;
+}
+
+#cont {
+  font-size: xx-large;
+  background-color: white;
+  color: green;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  height: fit-content;
+  cursor: pointer;
+}
+
+#search-container {
+  flex: 1;
+  display: flex;
+  padding-right: 2%;
+  position: relative;
+  /* Ensures #search-results is positioned relative to this container */
+}
+
+#search-main {
+  width: 100%;
+  height: 45px;
+  border-radius: 0.5rem;
+  background-color: rgb(143, 255, 143);
+  border: 2px solid white;
+  color: #006003;
+  font-size: larger;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#search-results {
+  position: absolute;
+  width: 30%;
+  right: 2%;
+  top: 10%;
+  background-color: rgb(255, 255, 255);
+  /*border: 1px solid #313131;*/
+  border-radius: 0.6rem;
+  z-index: 500;
+  display: none;
+  float: right;
+  padding: 0.6rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#more {
+  position: absolute;
+  width: 15%;
+  left: 5%;
+  top: 10%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  z-index: 500;
+  display: none;
+  float: right;
+  padding: 0.6rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list {
+  border-top: 2px solid rgb(223, 223, 223);
+  padding-bottom: 0.6rem;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.list:hover {
+  font-weight: bolder;
+  transition-duration: 0.4s;
+}
+
+.first {
+  border: none;
+}
+
+.gtranslate_wrapper {
+  margin-top: 10px;
+  margin-right: 20px;
+}

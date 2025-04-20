@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Garuda | Home</title>
+    <link rel="stylesheet" href="css/Users.css">
+    <link rel="stylesheet" href="css/Userprofile.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link rel="icon" type="image/x-icon" href="assets/E-garuda-title.png">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+</head>
+
+<body>
+    <header id="header-container">
+        <div id="morebtn">
+            <p id="cont">
+            </p>
+        </div>
+        <h1 id="UserName"></h1>
+        <div class="gtranslate_wrapper"></div>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        <div id="search-container">
+            <input type="search" name="search" id="search-main" placeholder="Serach Here">
+        </div>
+    </header>
+    <div id="more">
+        <div id="profile-btn" class="list first">Profile</div>
+        <div id="leaderboard-btn" class="list">Leaderboard</div>
+        <div id="education-btn" class="list">Education</div>
+        <div id="auth-btn" class="list">Authorized places</div>
+    </div>
+    <div id="search-results" style="display: none;">
+        No results
+    </div>
+
+
+
+    <div id="profile-container">
+        <div class="container" id="showprofile">
+            <header id="header-profile">User Profile</header>
+            <table id="display" style="width:100%">
+                <tr>
+                    <th>Firstname:</th>
+                    <td>
+                        <div id="fname" class="data" contenteditable="true"></div>
+                    </td>
+                    <th>Lastname:</th>
+                    <td>
+                        <div id="lname" class="data" contenteditable="true"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>State:</th>
+                    <td>
+                        <div>
+                            <select id="state" class="data">
+                                <option value="-" style="color: rgb(165, 165, 165);">Select</option>
+                            </select>
+                        </div>
+                    </td>
+                    <th>District:</th>
+                    <td>
+                        <div>
+                            <select id="district" class="data">
+                                <option value="-" style="color: rgb(165, 165, 165);">Select</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Pincode:</th>
+                    <td>
+                        <div id="pincode" contenteditable="true" class="data"></div>
+                    </td>
+                    <th>Address:</th>
+                    <td>
+                        <div id="address" contenteditable="true" class="data"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Age:</th>
+                    <td>
+                        <div id="age" class="unchangable"></div>
+                    </td>
+                    <th>Gender:</th>
+                    <td>
+                        <div>
+                            <select id="gender" class="data">
+                                <option value="-" style="color: rgb(165, 165, 165);">Select</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                                <option value="na">Doesn't want to specify</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Uniqueid:</th>
+                    <td>
+                        <div id="mailid" class="unchangable"></div>
+                    </td>
+                    <th>Mobile No:</th>
+                    <td>
+                        <div id="mobile" class="data" contenteditable="true"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>DOB:</th>
+                    <td>
+                        <input type="date" class="data" id="dob">
+                    </td>
+                    <td>
+                        <div class="status" id="status"></div>
+                    </td>
+                </tr>
+            </table>
+            <button id="edit-btn" class="edit">Save Changes</button>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+
+
+
+
+
+
+    <div id="leaderboard">
+        <div id="leader-container">
+            <header id="header-profile">Leaderboard</header>
+            <div id="leaderboard-filter">
+                <header id="header-here">Filter By</header>
+                <select id="leader" class="data leadoption">
+                    <option value="state">State</option>
+                    <option value="district">District</option>
+                    <option value="pincode">pincode</option>
+                </select>
+                <div id="rank-display">
+                    Your rank
+                    <div id="curr-rank">#0</div>
+                </div>
+            </div>
+            <div id="tablediv">
+                <table id="leader-table">
+                    <tr>
+                        <th class="l ra">Rank</th>
+                        <th class="l">Name</th>
+                        <th class="l po">Points</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <main id="main-content">
+        <div id="columns-row" class="row">
+            <div class="column" id="left-column">
+                <h2 class="columnheader">Collection centers</h2>
+                <section id="Collection-centers-cards" class="cards">
+                    <div id="Collection-card-template" class="card" style="display: none;">
+                        <div class="img_div">
+                            <div class="img"></div>
+                        </div>
+                        <div class="card_details_div">
+                            <div class="card_details"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--map here-->
+            <div class="column" id="right-column">
+                <div class="rightcontent" id="map">
+                </div>
+            </div>
+        </div>
+        <script src="js/map.js"></script>
+        <script src="js/detail.js"></script>
+        <script src="js/Users.js"></script>
+        <script src="js/StatesAndDistricts.js"></script>
+        <script src="js/leaderboard.js"></script>
+        <script src="js/language.js"></script>
+</body>
+
+</html>
